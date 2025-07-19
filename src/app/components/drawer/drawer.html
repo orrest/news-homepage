@@ -1,0 +1,24 @@
+<div
+  class="w-64 md:w-[19.5rem] flex flex-col gap-22 px-6 py-8 self-end h-full bg-white"
+  (click)="onDrawerClick($event)"
+>
+  <button class="self-end hover:cursor-pointer" (click)="onCloseClick($event)">
+    <img
+      ngSrc="./assets/images/icon-menu-close.svg"
+      width="32"
+      height="31"
+      alt="close"
+    />
+  </button>
+
+  <div class="bg-white flex flex-col gap-6">
+    @for (menu of menus(); track $index) {
+      <p
+        (click)="navigateTo(menu.route)"
+        class="text-preset-5 font-normal text-navy-950 hover:cursor-pointer"
+      >
+        {{ menu.title }}
+      </p>
+    }
+  </div>
+</div>
