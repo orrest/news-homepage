@@ -8,7 +8,7 @@ import { New } from '../../models/article';
   styleUrl: './news.css',
   host: {
     '[class]':
-      "'flex flex-col px-6 py-4 gap-8 md:px-10 md:py-8 xl:px-6 xl:py-4 bg-navy-950'",
+      "'flex flex-col px-6 py-4 gap-8 md:px-10 md:py-8 xl:px-6 xl:py-4'",
   },
 })
 export class News {

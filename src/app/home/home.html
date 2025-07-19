@@ -1,0 +1,97 @@
+<article
+  class="flex flex-col px-4 py-7 md:px-20 xl:grid xl:grid-rows-[repeat(auto,3)] xl:grid-cols-3 xl:gap-8"
+>
+  <!--  menu-->
+  <nav
+    class="flex flex-row justify-between items-center mb-8 xl:row-start-1 xl:row-span-1 xl:col-start-1 xl:col-span-3"
+  >
+    <img
+      ngSrc="./assets/images/logo.svg"
+      class="w-11 h-auto"
+      width="65"
+      height="40"
+      alt="logo"
+    />
+    <div class="hidden xl:flex xl:flex-row xl:gap-10">
+      @for (menu of menus(); track $index) {
+        <p
+          class="text-preset-6 text-navy-600 hover:cursor-pointer"
+          [routerLink]="menu.route"
+        >
+          {{ menu.title }}
+        </p>
+      }
+    </div>
+    <button class="xl:hidden" (click)="changeDrawerVisibility()">
+      <img
+        class="w-10 h-auto"
+        ngSrc="./assets/images/icon-menu.svg"
+        width="40"
+        height="17"
+        alt="menu"
+      />
+    </button>
+  </nav>
+
+  <!--  header-->
+  <header
+    class="flex flex-col gap-6 mb-16 xl:mb-0 xl:row-start-2 xl:row-end-2 xl:col-start-1 xl:col-span-2 xl:flex-wrap xl:grid xl:grid-cols-2 xl:grid-row-[repeat(auto,3)]"
+  >
+    <picture class="xl:row-start-1 xl:row-end-1 xl:col-start-1 xl:col-span-2">
+      <source
+        media="(min-width: 375px)"
+        srcset="./assets/images/image-web-3-desktop.jpg"
+        width="1460"
+        height="600"
+      />
+      <img
+        class="w-full h-auto"
+        src="./assets/images/image-web-3-mobile.jpg"
+        width="686"
+        height="600"
+        alt="web"
+      />
+    </picture>
+    <h1
+      class="text-preset-2 text-navy-950 xl:row-start-2 xl:row-span-2 xl:col-start-1 xl:col-end-1"
+    >
+      The Bright Future of Web 3.0?
+    </h1>
+    <p class="text-preset-6 text-navy-600">
+      We dive into the next evolution of the web that claims to put the power of
+      the platforms back into the hands of the people. But is it really
+      fulfilling its promise?
+    </p>
+    <app-text-button text="READ MORE"></app-text-button>
+  </header>
+
+  <!--  news-->
+  <section
+    class="mb-16 bg-navy-950 xl:h-full xl:row-start-2 xl:row-end-2 xl:col-start-3 xl:col-end-3"
+  >
+    @if (news()) {
+      <app-news [news]="news()!"></app-news>
+    }
+  </section>
+
+  <!--  articles-->
+  <section
+    class="mb-16 flex flex-col gap-8 xl:flex-row xl:row-start-4 xl:row-end-4 xl:col-start-1 xl:col-span-3"
+  >
+    @if (trends(); as trends) {
+      @for (trend of trends; track $index) {
+        <app-article-card
+          [model]="trend"
+          [number]="$index + 1"
+        ></app-article-card>
+      }
+    }
+  </section>
+
+  <!--  drawer-->
+  <app-drawer
+    [visible]="isDrawerOpen()"
+    [menus]="menus()"
+    (close)="changeDrawerVisibility()"
+  ></app-drawer>
+</article>
