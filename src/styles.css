@@ -1,5 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --color-grey-300: #c5c6ce;
+  --color-grey-200: #d8d8d8;
+  --color-navy-950: #00001a;
+  --color-navy-600: #5e607a;
+  --color-gold-400: #e9aa52;
+  --color-red-500: #f15d51;
+
+  --text-preset-1: 56px;
+  --text-preset-1--font-weight: 800;
+  --text-preset-1--line-height: 100%;
+  --text-preset-1--letter-spacing: 0;
+
+  --text-preset-2: 40px;
+  --text-preset-2--font-weight: 800;
+  --text-preset-2--line-height: 100%;
+  --text-preset-2--letter-spacing: 0;
+
+  --text-preset-3: 32px;
+  --text-preset-3--font-weight: 700;
+  --text-preset-3--line-height: 100%;
+  --text-preset-3--letter-spacing: 0;
+
+  --text-preset-4: 20px;
+  --text-preset-4--font-weight: 800;
+  --text-preset-4--line-height: 24px;
+  --text-preset-4--letter-spacing: 0;
+
+  --text-preset-5: 18px;
+  --text-preset-5--font-weight: 800;
+  --text-preset-5--line-height: 24px;
+  --text-preset-5--letter-spacing: 0;
+
+  --text-preset-6: 15px;
+  --text-preset-6--font-weight: 400;
+  --text-preset-6--line-height: 26px;
+  --text-preset-6--letter-spacing: 0;
+
+  --text-preset-7: 14px;
+  --text-preset-7--font-weight: 700;
+  --text-preset-7--line-height: 24px;
+  --text-preset-7--letter-spacing: 4.38px;
+}
 
 @layer base {
   /* Box sizing rules */
