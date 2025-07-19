@@ -1,0 +1,15 @@
+@if (model(); as trend) {
+  <img
+    class="w-[100px] h-auto"
+    [ngSrc]="trend.url"
+    [width]="trend.width"
+    [height]="trend.height"
+    [alt]="`${trend.title} image`"
+  />
+
+  <div class="flex flex-col gap-2">
+    <h1 class="text-preset-3 text-red-500">{{ number() | number: "2.0-0" }}</h1>
+    <h2 class="text-preset-5 text-navy-950">{{ trend.title }}</h2>
+    <p class="text-preset-6 text-navy-600">{{ trend.summary }}</p>
+  </div>
+}
